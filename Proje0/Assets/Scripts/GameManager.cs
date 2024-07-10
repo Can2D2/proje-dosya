@@ -54,6 +54,7 @@ public class GameManager : MonoBehaviour
     public void GameStart()
     {
 
+        scoreText.text = "0";
         player.SetActive(true);
         playButton.SetActive(false);
 
