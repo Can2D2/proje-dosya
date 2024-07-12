@@ -1094,7 +1094,6 @@ MonoBehaviour:
   scoreText: {fileID: 1370391647}
   playButton: {fileID: 1234662514}
   player: {fileID: 382019250}
-  camscript: {fileID: 1680534117}
 --- !u!4 &1193228852
 Transform:
   m_ObjectHideFlags: 0
@@ -1823,7 +1822,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1680534118
 MonoBehaviour:
   m_ObjectHideFlags: 0

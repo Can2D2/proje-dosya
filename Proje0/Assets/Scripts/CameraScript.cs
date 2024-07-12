@@ -35,7 +35,7 @@ public class CameraScript : MonoBehaviour
     }
     private void Start()
     {
-        tex = null ;
+        
         if (tex == null)
         {
             WebCamDevice device = WebCamTexture.devices[currentCamIndex];
@@ -45,7 +45,7 @@ public class CameraScript : MonoBehaviour
             tex.Play();
         }
         
-            if (tex != null)
+            else 
             {
                 display.texture = null;
                 tex.Stop();

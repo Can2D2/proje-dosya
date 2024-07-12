@@ -13,7 +13,6 @@ public class NewBehaviourScript : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public GameObject playButton;
     public GameObject player;
-    public GameObject camscript;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +44,6 @@ public class NewBehaviourScript : MonoBehaviour
 
     public void GameStart()
     {
-        camscript.SetActive(true);
         player.SetActive(true);
 
         playButton.SetActive(false);
