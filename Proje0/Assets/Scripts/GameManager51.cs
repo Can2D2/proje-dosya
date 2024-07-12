@@ -1,0 +1,57 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class NewBehaviourScript : MonoBehaviour
+{
+
+    public GameObject obstacle;
+    public Transform spawnPoint;
+    public float waitTime = 2f;
+    int score = 0;
+    public TextMeshProUGUI scoreText;
+    public GameObject playButton;
+    public GameObject player;
+    public GameObject camscript;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+
+    IEnumerator SpawnObstacles()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(waitTime);
+            Instantiate(obstacle, spawnPoint.position, Quaternion.identity);
+            //score++;
+        }
+    }
+
+    void ScoreUp()
+    {
+        score++;
+        scoreText.text = score.ToString();
+    }
+
+    public void GameStart()
+    {
+        camscript.SetActive(true);
+        player.SetActive(true);
+
+        playButton.SetActive(false);
+        StartCoroutine("SpawnObstacles");
+        InvokeRepeating("ScoreUp", 1f, 1f);
+
+    }
+
+}
