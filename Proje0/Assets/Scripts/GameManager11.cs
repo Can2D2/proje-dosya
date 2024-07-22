@@ -31,6 +31,7 @@ public class GameManager11 : MonoBehaviour
         {
             yield return new WaitForSeconds(waitTime);
             Instantiate(obstacle, spawnPoint.position, Quaternion.identity);
+            Instantiate(obstacle, spawnPoint.position, Quaternion.identity);
             //score++;
         }
     }
