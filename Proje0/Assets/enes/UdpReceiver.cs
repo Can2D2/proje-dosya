@@ -16,6 +16,8 @@ public class UdpReceiver : MonoBehaviour
     private UdpClient udpClientAngles;
     private UdpClient udpClientImage;
 
+    private string imageData;
+
     async void Start()
     {
         udpClientCoordinates = new UdpClient(PortCoordinates);
@@ -29,7 +31,11 @@ public class UdpReceiver : MonoBehaviour
         // Start listening in background and await completion
         _ = StartUdpListener(udpClientCoordinates, "Coordinates");
         _ = StartUdpListener(udpClientAngles, "Angles");
-        _ = StartImageUdpListener();
+        _ = StartImageUdpListener(data => 
+        {
+            imageData = data;
+            byte[] imageBytes = Convert.FromBase64String(imageData);});
+    
     }
 
     private async Task StartUdpListener(UdpClient udpClient, string label)
@@ -49,12 +55,11 @@ public class UdpReceiver : MonoBehaviour
                 Debug.LogError($"Error receiving {label}: {ex.Message}");
             }
 
-            // Satisfies the compiler warning CS1998
             await Task.CompletedTask;
         }
     }
 
-    private async Task StartImageUdpListener()
+    private async Task StartImageUdpListener(Action<string> onImageReceived)
     {
         IPEndPoint remoteEndPoint = new IPEndPoint(IPAddress.Parse(LocalIP), PortImage);
 
@@ -62,16 +67,18 @@ public class UdpReceiver : MonoBehaviour
         {
             try
             {
+                byte[] imageBytes = Convert.FromBase64String(imageData);
                 var receivedBytes = await udpClientImage.ReceiveAsync();
                 string base64Image = Encoding.UTF8.GetString(receivedBytes.Buffer);
                 Debug.Log("Received image data of length: " + base64Image.Length);
+
+                onImageReceived?.Invoke(base64Image);
             }
             catch (Exception ex)
             {
                 Debug.LogError($"Error receiving image: {ex.Message}");
             }
 
-            // Satisfies the compiler warning CS1998
             await Task.CompletedTask;
         }
     }
