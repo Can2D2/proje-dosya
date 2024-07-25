@@ -83,8 +83,7 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
 
             coordinates_json = json.dumps(coordinates)
             angles_json = json.dumps(angles)
-
-            sock.sendto(img_base64.encode('utf-8'), serverAddressPortImg)
+            
             sock.sendto(coordinates_json.encode('utf-8'), serverAddressPortCor)
             sock.sendto(angles_json.encode('utf-8'), serverAddressPortAng)
             
@@ -108,17 +107,17 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
     cap.release()
     cv2.destroyAllWindows()
 
-    #l shoulder
-    #r shoulder
-    #l elbow
-    #r elbow
-    #l wrist !
-    #r wrist !
-    #l hip
-    #r hip
-    #l knee
-    #r knee
-    #l ankle !
-    #r ankle !
+    #l shoulder 0 0
+    #r shoulder 1 1
+    #l elbow 2 2
+    #r elbow 3 3
+    #l wrist 4 !
+    #r wrist 5 !
+    #l hip 6 4
+    #r hip 7 5
+    #l knee 8 6
+    #r knee 9 7
+    #l ankle 10 !
+    #r ankle 11 !
     #coordinates ve angles arraylerindeki sıra (yukarıdan aşağıya doğru 0, 1 ...)
     #yanında ! olanlar coordinatesta var anglesta yok
