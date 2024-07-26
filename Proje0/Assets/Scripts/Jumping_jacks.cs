@@ -7,13 +7,14 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class Jumping_jacks : MonoBehaviour
+public class Jumping_jacks : MonoBehaviour, IExercise
 {
     private const int shoulder_upper_threshold = 120;
     private const int shoulder_lower_threshold = 40;
     private bool c = false;
     private int prev_hip = 200;
     public int counter = 0;
+    public int Counter => counter;
     public UdpReceiver udp;
     private int[] angles;
     private float[][] coordinates;

@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
 
-    public Squats a;
+    public IExercise a;
     private int prevCounter = 0;
 
     Rigidbody rb;
@@ -28,11 +28,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-        if (a != null && a.counter > prevCounter && canJump) 
+        if (a != null && a.Counter > prevCounter && canJump) 
         { 
         
             rb.AddForce(Vector3.up *  jumpForce, ForceMode.Impulse);
-            prevCounter = a.counter;
+            prevCounter = a.Counter;
         }
 
     }
@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
     {
         if(other.gameObject.tag == "Obstacle")
         {
-            SceneManager.LoadScene("Game2.1");
+            SceneManager.LoadScene("Squat 2.1");
         }
     }
 

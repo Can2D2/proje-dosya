@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class VUps : MonoBehaviour
+public class VUps : MonoBehaviour, IExercise
 {
     private const int hip_upper_threshold = 170; 
     private const int hip_lower_threshold = 100;   
@@ -15,7 +15,8 @@ public class VUps : MonoBehaviour
     private const int shoulder_lower_threshold = 100;
 
     private bool isLyingFlat = true; 
-    public int counter = 0; 
+    public int counter = 0;
+    public int Counter => counter;
     public UdpReceiver udp;
     private int[] angles;
     private float[][] coordinates;

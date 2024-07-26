@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ButtBridges : MonoBehaviour
+public class ButtBridges : MonoBehaviour, IExercise
 {
     private bool isLifting = false; 
-    public int counter = 0; 
+    public int counter = 0;
+    public int Counter => counter;
     private float hipYMin = 1f; 
     private float hipYMax = 0f; 
     public float scaledY = 0f; 

@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WideArmPushUps : MonoBehaviour
+public class WideArmPushUps : MonoBehaviour, IExercise
 {
     private bool pushedDown = false;
     public int counter = 0;
+    public int Counter => counter;
 
     private const int elbowBendThreshold = 110;
     private const int hipAlignmentThreshold = 160;

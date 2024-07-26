@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class Lunges : MonoBehaviour
+public class Lunges : MonoBehaviour, IExercise
 {
     private const int first_knee_upper_threshold = 165;
     private const int first_knee_lower_threshold = 100;
@@ -16,6 +16,7 @@ public class Lunges : MonoBehaviour
     private bool c = false;
     private bool p = false;
     public int counter = 0;
+    public int Counter => counter;
 
     public UdpReceiver udp;
     private int[] angles;

@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BicycleCrunches : MonoBehaviour
+public class BicycleCrunches : MonoBehaviour, IExercise
 {
     private bool leftElbowToRightKnee = false;
     private bool rightElbowToLeftKnee = false;
     public int counter = 0;
+    public int Counter => counter;
 
     private const int kneeBendThreshold = 90;
     private const int kneeExtendThreshold = 150;

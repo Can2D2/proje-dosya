@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class Reverse_flutter_kicks : MonoBehaviour
+public class Reverse_flutter_kicks : MonoBehaviour, IExercise
 {
     private float right_ankle_max = 0;
     private float left_ankle_max = 0;
@@ -16,6 +16,7 @@ public class Reverse_flutter_kicks : MonoBehaviour
     private bool r_is_increasing = false;
     private bool l_is_increasing = false;
     public int counter = 0;
+    public int Counter => counter;
 
     public UdpReceiver udp;
     private int[] angles;

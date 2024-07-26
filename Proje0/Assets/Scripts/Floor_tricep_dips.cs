@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Floor_tricep_dips : MonoBehaviour
+public class Floor_tricep_dips : MonoBehaviour, IExercise
 {
     private const int elbow_upper_threshold = 170;
     private const int elbow_lower_threshold = 150;
     private bool c = false;
     public int counter = 0;
+    public int Counter => counter;
 
     private float hip_coor_max = 0f;
     private float hip_coor_min = 1f;

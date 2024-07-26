@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class barbell_curls : MonoBehaviour
+public class barbell_curls : MonoBehaviour, IExercise
 {
     private float wristCoorMax = 0f;
     private float wristCoorMin = 1f;
@@ -11,6 +11,7 @@ public class barbell_curls : MonoBehaviour
     private int elbowLowerThreshold = 90;
     private int elbowUpperThreshold = 150;
     public int counter = 0;
+    public int Counter => counter;
     private bool c = false;
     public UdpReceiver udp;
     private int[] angles;

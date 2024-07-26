@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class leg_raises : MonoBehaviour
+public class leg_raises : MonoBehaviour, IExercise
 {
     private bool c = false;
     public int counter = 0;
+    public int Counter => counter;
     private float hip_coor_min = 1f;
     private float hip_coor_max = 0f;
     public float scaled_coor = 0f;
