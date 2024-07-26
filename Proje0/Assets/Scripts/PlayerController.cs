@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 public class PlayerController : MonoBehaviour
 {
 
+    public Squats a;
+    private int prevCounter = 0;
+
     Rigidbody rb;
     public float jumpForce;
     bool canJump;
@@ -17,6 +20,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Debug.Log("The value from ScriptA is: " + squats.counter);
         
     }
 
@@ -24,12 +28,11 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
 
-
-        if (Input.GetMouseButtonDown(0) && canJump) 
+        if (a != null && a.counter > prevCounter && canJump) 
         { 
         
             rb.AddForce(Vector3.up *  jumpForce, ForceMode.Impulse);
-
+            prevCounter = a.counter;
         }
 
     }
