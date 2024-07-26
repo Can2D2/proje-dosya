@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Male UI.unity
     guid: 4a17c5595e67bbe40aab3281266ceb78
   - enabled: 0
-    path: Assets/Scenes/Game2.1.unity
+    path: Assets/Scenes/Squat 2.1.unity
     guid: c850ee8c3b14cc8459e7e186857cf567
   - enabled: 1
     path: Assets/Scenes/Game1.1.unity
