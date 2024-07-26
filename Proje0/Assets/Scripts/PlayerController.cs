@@ -2,10 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class PlayerController : MonoBehaviour
 {
+    int currentCamIndex = 0;
 
     public IExercise a;
+    WebCamTexture tex;
+    public RawImage display;
     private int prevCounter = 0;
 
     Rigidbody rb;
@@ -20,8 +24,15 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log("The value from ScriptA is: " + squats.counter);
-        
+        if (tex == null)
+        {
+            WebCamDevice device = WebCamTexture.devices[currentCamIndex];
+            tex = new WebCamTexture(device.name);
+            display.texture = tex;
+
+            tex.Play();
+
+        }
     }
 
     // Update is called once per frame
@@ -59,6 +70,14 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.tag == "Obstacle")
         {
             SceneManager.LoadScene("Squat 2.1");
+            if (tex != null)
+            {
+                display.texture = null;
+                tex.Stop();
+                tex = null;
+
+            }
+            SceneManager.LoadScene("Male UI");
         }
     }
 
