@@ -4,10 +4,14 @@ using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 public class KusKontrol : MonoBehaviour
 {
+    int currentCamIndex = 0;
 
+    WebCamTexture tex;
+    public RawImage display;
     Rigidbody rb;
     public float hiz;
 
@@ -19,7 +23,15 @@ public class KusKontrol : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (tex == null)
+        {
+            WebCamDevice device = WebCamTexture.devices[currentCamIndex];
+            tex = new WebCamTexture(device.name);
+            display.texture = tex;
+
+            tex.Play();
+
+        }
     }
 
     // Update is called once per frame
@@ -53,8 +65,14 @@ public class KusKontrol : MonoBehaviour
     {
         if(other.gameObject.tag == "Obstacle"|| other.gameObject.tag == "Sinir")
         {
-            
-            SceneManager.LoadScene("Game5.1");
+            if (tex != null)
+            {
+                display.texture = null;
+                tex.Stop();
+                tex = null;
+
+            }
+            SceneManager.LoadScene("Male UI");
         }
     }
 

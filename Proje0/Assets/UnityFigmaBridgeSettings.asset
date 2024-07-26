@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 119c1bd3601648f28a252a6030e067b6, type: 3}
   m_Name: UnityFigmaBridgeSettings
   m_EditorClassIdentifier: 
-  DocumentUrl: https://www.figma.com/design/Nv3rUTnMtAYJ7f0at9qBpX/Untitled?node-id=0-1&t=yweNyMiVnjysVLcH-0
-  BuildPrototypeFlow: 1
+  DocumentUrl: https://www.figma.com/design/HEtWrzKmTgKI8nreClG5Fw/Unity-UI?node-id=0-1&t=zfeHHpNJ5c07tXi9-0
+  BuildPrototypeFlow: 0
   RunTimeAssetsScenePath: Assets/Scenes/UI Example.unity
   EnableAutoLayout: 0
   ScreenBindingNamespace: 

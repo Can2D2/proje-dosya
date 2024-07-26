@@ -4,7 +4,25 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Starting Menu.unity
+    guid: 192965ad085939b4798cc923becfb6a2
+  - enabled: 1
+    path: Assets/Scenes/Gender.unity
+    guid: ffb1f8d133be4fb4397df67a23037616
+  - enabled: 1
+    path: Assets/Scenes/Female UI.unity
+    guid: d23e874d5e183c24e825333565930bc7
+  - enabled: 1
+    path: Assets/Scenes/Male UI.unity
+    guid: 4a17c5595e67bbe40aab3281266ceb78
+  - enabled: 0
+    path: Assets/Scenes/Game2.1.unity
+    guid: c850ee8c3b14cc8459e7e186857cf567
+  - enabled: 1
+    path: Assets/Scenes/Game1.1.unity
+    guid: 9c6eb9da66e71f944a3e028f4905b574
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: a2c9612d82409cb45b7be65a9d0c0676,
       type: 2}

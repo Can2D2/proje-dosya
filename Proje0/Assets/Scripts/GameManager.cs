@@ -32,15 +32,13 @@ public class GameManager : MonoBehaviour
         while (true) 
         {
 
-            float waitTime = Random.Range(1f, 3f);
+            float waitTime = Random.Range(1.5f, 3f);
 
             yield return new WaitForSeconds(waitTime);
             
             Instantiate(obstacle, spawnPoint.position, Quaternion.identity);
             //ScoreUp();//atladikca score art
-            yield return new WaitForSeconds(4f-waitTime);
 
-            Instantiate(obstacle, spawnPoint.position, Quaternion.identity);
             //ScoreUp();//atladikca score art
 
         }
